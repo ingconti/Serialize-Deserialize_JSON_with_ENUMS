@@ -11,21 +11,20 @@ public class GSONEnumExamples {
     }
 
     public static void serializeEnumGson() {
-        Project project = new Project(100, "CMS", "Content Management System", ProjectStatus.NEW);
+        God god = new God( "Neptune", "God of Sea", God.PowerType.CAN_RAISE_WAVES);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String result = gson.toJson(project);
+        String result = gson.toJson(god);
         System.out.println(result);
     }
 
     public static void deserializeEnumGson() {
         String input = "{\r\n" +
-                "  \"projectId\": 100,\r\n" +
-                "  \"projectName\": \"CMS\",\r\n" +
-                "  \"projectDesc\": \"Content Management System\",\r\n" +
-                "  \"projectStatus\": \"NEW\"\r\n" +
+                "  \"name\": \"Jupiter\",\r\n" +
+                "  \"desc\": \"Boss of all Gods\",\r\n" +
+                "  \"powerType\": \"CAN_THROW_LIGHTINGS\"\r\n" +
                 "}";
         Gson gson = new GsonBuilder().create();
-        Project project = gson.fromJson(input, Project.class);
+        God project = gson.fromJson(input, God.class);
         System.out.println(project.toString());
     }
 }

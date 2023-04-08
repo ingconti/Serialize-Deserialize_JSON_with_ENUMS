@@ -1,61 +1,55 @@
 package org.example;
 
 
-enum PowerType {
-    CAN_THROW_LIGHTINGS,
-    CAN_RAISE_WAVES,
-    CAN_AWAKE_DEAD,
-}
 
-class Project {
-    private int projectId;
-    private String projectName;
-    private String projectDesc;
-    private PowerType projectStatus;
+class God {
 
-    public Project(int projectId, String projectName, String projectDesc, PowerType projectStatus) {
-        super();
-        this.projectId = projectId;
-        this.projectName = projectName;
-        this.projectDesc = projectDesc;
-        this.projectStatus = projectStatus;
+    enum PowerType {
+        CAN_THROW_LIGHTINGS,
+        CAN_RAISE_WAVES,
+        CAN_AWAKE_DEAD,
+    }
+    private String name;
+    private String desc;
+    private PowerType powerType;
+
+    public God( String name, String desc, PowerType powerType) {
+        this.name = name;
+        this.desc = desc;
+        this.powerType = powerType;
     }
 
-    public int getProjectId() {
-        return projectId;
+
+    public String getName() {
+        return name;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
-    public String getProjectDesc() {
-        return projectDesc;
+    public PowerType getPowerType() {
+        return powerType;
     }
 
-    public void setProjectDesc(String projectDesc) {
-        this.projectDesc = projectDesc;
-    }
-
-    public PowerType getProjectStatus() {
-        return projectStatus;
-    }
-
-    public void setProjectStatus(PowerType projectStatus) {
-        this.projectStatus = projectStatus;
+    public void setPowerType(PowerType powerType) {
+        this.powerType = powerType;
     }
 
     @Override
     public String toString() {
-        return "Project [projectId=" + projectId + ", projectName=" + projectName + ", projectDesc=" + projectDesc +
-                ", projectStatus=" + projectStatus + "]";
+        return "God{" +
+                "name='" + name + '\'' +
+                ", desc='" + desc + '\'' +
+                ", powerType=" + powerType +
+                '}';
     }
 }
